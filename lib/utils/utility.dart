@@ -3,6 +3,14 @@ import 'package:another_flushbar/flushbar_route.dart';
 import 'package:flutter/material.dart';
 
 class Utility {
+  static double averageRating(List<int> rating) {
+    var avgRating = 0;
+    for (var i = 0; i < rating.length; i++) {
+      avgRating = avgRating + rating[i];
+    }
+    return double.parse((avgRating / rating.length).toStringAsFixed(1));
+  }
+
   static toastMessage(String message, BuildContext context) {
     var snack = SnackBar(
       content: Text(message),

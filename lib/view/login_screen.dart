@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mvvm_arch/utils/routes/routes_name.dart';
 import 'package:provider/provider.dart';
@@ -105,13 +106,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       Utility.flustBarMessage(
                           'password must be 6 digit long', context);
                     } else {
+                      // Map<String, String> data = {
+                      //   "email": _emailController.text,
+                      //   "password": _passwordController.text,
+                      // };
+
                       Map<String, String> data = {
-                        "email": _emailController.text,
-                        "password": _passwordController.text,
+                        "email": 'eve.holt@reqres.in',
+                        "password": 'cityslicka',
                       };
 
                       authViewModel.loginApi(data, context);
-                      print('API hit');
+                      if (kDebugMode) {
+                        print('API hit');
+                      }
                     }
                   }),
               SizedBox(

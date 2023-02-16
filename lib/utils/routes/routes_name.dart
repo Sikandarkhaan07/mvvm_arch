@@ -7,4 +7,7 @@ class RoutesName {
 
   //home screen route name
   static const String homeScreen = 'home_screen';
+
+  //splash screen route name
+  static const String splashScreen = 'splash_screen';
 }

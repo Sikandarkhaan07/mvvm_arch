@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mvvm_arch/utils/routes/routes_name.dart';
 import 'package:mvvm_arch/utils/utility.dart';
@@ -112,7 +113,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       };
 
                       authViewModel.registerApi(data, context);
-                      print('API hit');
+                      if (kDebugMode) {
+                        print('API hit');
+                      }
                     }
                   }),
               SizedBox(
